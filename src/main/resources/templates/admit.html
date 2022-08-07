@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Please Add Patient Details</title>
+</head>
+<body>
+
+<form th:action="@{/process_admit}" th:object="${patient}"
+      method="post" style="max-width: 600px; margin: 0 auto;">
+    <div>
+        <h1>Admit Patient</h1>
+    </div>
+    <div class="form-group row">
+        <label class="col-4 col-form-label">First Name: </label>
+        <div class="col-8">
+            <input type="text" th:field="*{firstName}" class="form-control"
+                   required minlength="2" maxlength="20"/>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-4 col-form-label">Last Name: </label>
+        <div class="col-8">
+            <input type="text" th:field="*{lastName}" class="form-control"
+                   required minlength="2" maxlength="20"/>
+        </div>
+    </div>
+<div class="form-group row">
+    <label class="col-4 col-form-label">Age: </label>
+    <div class="col-8">
+        <input type="text" th:field="*{age}" class="form-control"
+               required minlength="2" maxlength="20" />
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-4 col-form-label">RoomNo: </label>
+    <div class="col-8">
+        <input type="text" th:field="*{roomNo}" class="form-control"
+               required minlength="2" maxlength="20" />
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-4 col-form-label">Doctor Name: </label>
+    <div class="col-8">
+        <input type="text" th:field="*{docName}" class="form-control"
+               required minlength="2" maxlength="20" />
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-4 col-form-label">Admit Date: </label>
+    <div class="col-8">
+        <input type="date" th:field="*{admitDate}" class="form-control"
+               required minlength="2" maxlength="20" />
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-4 col-form-label">Expenses: </label>
+    <div class="col-8">
+        <input type="text" th:field="*{expenses}" class="form-control"
+               required minlength="2" maxlength="20" />
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-4 col-form-label">Status: </label>
+    <div class="col-8">
+        <input type="radio" id="admitted" value="admitted" th:field="*{status}" class="form-control"/>
+        <label for="admitted">Admitted</label>
+    </div>
+</div>
+    <div>
+        <button type="submit" class="btn btn-primary">Admit</button>
+    </div>
+</form>
+</div>
+</body>
+</html>

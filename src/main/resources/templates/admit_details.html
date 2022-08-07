@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admit Details</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div>
+    <h1>Admit Patient Details</h1>
+</div>
+<div>
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th>Admit Date</th>
+            <th>Doctor Name</th>
+            <th>Room No</th>
+            <th>Expenses</th>
+            <th>Status</th>
+            <th>Update Details</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="patient: ${listPatients}">
+            <td th:text="${patient.patientId}">First Name</td>
+            <td th:text="${patient.firstName}">First Name</td>
+            <td th:text="${patient.lastName}">Last Name</td>
+            <td th:text="${patient.age}">Age</td>
+            <td th:text="${patient.admitDate}">Admit Date</td>
+            <td th:text="${patient.docName}">Doctor Name</td>
+            <td th:text="${patient.roomNo}">Room No</td>
+            <td th:text="${patient.expenses}">Expenses</td>
+            <td th:text="${patient.status}">Status</td>
+            <td>  <a th:href="@{/update_patient/{patientId}(patientId=${patient.patientId})}">
+            Update Patient</a></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+</body>
+</html>
